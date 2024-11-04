@@ -30,7 +30,12 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       BankingAppUITheme {
-        Scaffold(modifier = Modifier.fillMaxSize(), bottomBar = {}) { innerPadding ->
+        Scaffold(modifier = Modifier
+          .fillMaxSize(),
+          bottomBar = {
+            //BottomNavigationBar()
+          }
+        ) { innerPadding ->
 
           HomeScreen(innerPadding)
 
@@ -43,14 +48,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HomeScreen(innerPadding: PaddingValues) {
   Column (
-    modifier = Modifier.padding(innerPadding)
+    modifier = Modifier
+      .padding(innerPadding)
+      .fillMaxSize()
   ) {
 
     //WalletSection()
     Spacer(modifier = Modifier.height(16.dp))
     //CardsSection()
     //FinanceSection()
-    //CurreniesSection()
+    //CurrenciesSection()
 
   }
 }
